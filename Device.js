@@ -1,15 +1,15 @@
-var { NativeModules, Dimensions } = require('react-native');
+var { NativeModules, Dimensions, Platform } = require('react-native');
 var DeviceUtil = NativeModules.DeviceUtil;
 
 class Device {
   constructor() {
     this.width = Dimensions.get('window').width;
     this.height = Dimensions.get('window').height;
-    this.model = DeviceUtil.model;
-    this.deviceName = DeviceUtil.name;
-    this.systemName = DeviceUtil.systemName;
-    this.systemVersion = DeviceUtil.systemVersion;
-    this.deviceVersion = DeviceUtil.deviceVersion;
+    this.model = DeviceUtil && DeviceUtil.model;
+    this.deviceName = DeviceUtil && DeviceUtil.name;
+    this.systemName = DeviceUtil && DeviceUtil.systemName;
+    this.systemVersion = DeviceUtil && DeviceUtil.systemVersion;
+    this.deviceVersion = DeviceUtil && DeviceUtil.deviceVersion;
   }
 
   isIpad() {
