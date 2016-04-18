@@ -6,10 +6,10 @@ class Device {
     this.width = Dimensions.get('window').width;
     this.height = Dimensions.get('window').height;
     this.model = DeviceUtil && DeviceUtil.model;
-    this.deviceName = DeviceUtil && DeviceUtil.name;
-    this.systemName = DeviceUtil && DeviceUtil.systemName;
-    this.systemVersion = DeviceUtil && DeviceUtil.systemVersion;
-    this.deviceVersion = DeviceUtil && DeviceUtil.deviceVersion;
+    this.deviceName = DeviceUtil ? DeviceUtil.name : "not implemented for android";
+    this.systemName = DeviceUtil ? DeviceUtil.systemName : "not implemented for android";
+    this.systemVersion = DeviceUtil ? DeviceUtil.systemVersion : "not implemented for android";
+    this.deviceVersion = DeviceUtil ? DeviceUtil.deviceVersion : "not implemented for android";
   }
 
   isIpad() {
